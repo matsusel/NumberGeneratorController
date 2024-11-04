@@ -13,22 +13,26 @@ def programB():
     response = process.stdout.readline().strip()
     if response == "Hi":
         print("ProgramA sent Hi")
-    list = []
+    pseudo_numbers_list = []
     for _ in range(100):
         process.stdin.write("GetRandom\n")
         process.stdin.flush()
         response = process.stdout.readline().strip()
         number = int(response)
-        list.append(int(number))
+        pseudo_numbers_list.append(int(number))
 
     process.stdin.write("Shutdown\n")
     process.stdin.flush()
     process.stdin.close()
+    status = process.poll()
+    if status is None:
+        print("ProgramA has shut down")
 
-    list.sort()
-    print(list)
-    print("Average: " + str(sum(int(x) for x in list ) / len(list)))
-    print("Median: " + str(median(list)))
+    pseudo_numbers_list.sort()
+    print("Pseudo-Random Numbers List")
+    print(pseudo_numbers_list)
+    print("Average: " + str(sum(int(x) for x in pseudo_numbers_list ) / len(pseudo_numbers_list)))
+    print("Median: " + str(median(pseudo_numbers_list)))
 
 programB()
 
