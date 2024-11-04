@@ -8,11 +8,13 @@ def programB():
         stdout=subprocess.PIPE,
         text=True
     )
+
     process.stdin.write("Hi\n")
     process.stdin.flush()
     response = process.stdout.readline().strip()
     if response == "Hi":
         print("ProgramA sent Hi")
+
     pseudo_numbers_list = []
     for _ in range(100):
         process.stdin.write("GetRandom\n")
