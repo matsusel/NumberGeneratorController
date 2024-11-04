@@ -19,7 +19,7 @@ def controller():
     test_shutdown(process)
 
     pseudo_numbers_list.sort()
-    print("Pseudo-Random Numbers List: ")
+    print("Pseudo-Random numbers list: ")
     print(pseudo_numbers_list)
 
     average_from_list(pseudo_numbers_list)

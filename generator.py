@@ -16,12 +16,15 @@ def generator():
 def pseudorandom_number():
     return random.randint(-1000, 1000)
 
+
 def send_hi():
     sys.stdout.write("Hi\n")
     sys.stdout.flush()
 
+
 def send_number():
     sys.stdout.write(str(f"{pseudorandom_number()}\n"))
     sys.stdout.flush()
+
 
 generator()
