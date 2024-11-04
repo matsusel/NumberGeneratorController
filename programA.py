@@ -16,6 +16,6 @@ def programA():
 
 
 def generator():
-    return random.randint(-100, 100)
+    return random.randint(-1000, 1000)
 
 programA()
